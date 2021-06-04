@@ -1,0 +1,85 @@
+{
+com.badlogic.gdx.graphics.g2d.BitmapFont: {
+	defaul_font: {
+		file: defaul_font.fnt
+	}
+}
+com.badlogic.gdx.graphics.Color: {
+	BLACK: {
+		r: 0
+		g: 0
+		b: 0
+		a: 1
+	}
+	BLUE: {
+		r: 0
+		g: 0
+		b: 1
+		a: 1
+	}
+	GRAY: {
+		r: 0.5
+		g: 0.5
+		b: 0.5
+		a: 1
+	}
+	WHITE: {
+		r: 1
+		g: 1
+		b: 1
+		a: 1
+	}
+}
+com.badlogic.gdx.scenes.scene2d.ui.Skin$TintedDrawable: {
+	WHITE_PIXEL: {
+		name: white-pixel
+		color: WHITE
+	}
+	GRAY_PIXEL: {
+		name: white-pixel
+		color: GRAY
+	}
+	BLACK_PIXEL: {
+		name: white-pixel
+		color: BLACK
+	}
+	BLUE_PIXEL: {
+		name: white-pixel
+		color: BLUE
+	}
+}
+com.badlogic.gdx.scenes.scene2d.ui.Label$LabelStyle: {
+	default: {
+		font: defaul_font
+		fontColor: WHITE
+	}
+}
+com.badlogic.gdx.scenes.scene2d.ui.ScrollPane$ScrollPaneStyle: {
+	default: {
+		vScroll: BLUE_PIXEL
+		vScrollKnob: WHITE_PIXEL
+	}
+}
+com.badlogic.gdx.scenes.scene2d.ui.TextButton$TextButtonStyle: {
+	default: {
+		font: defaul_font
+		fontColor: WHITE
+		downFontColor: WHITE
+		overFontColor: BLACK
+		up: BLACK_PIXEL
+		down: GRAY_PIXEL
+		over: WHITE_PIXEL
+	}
+}
+com.badlogic.gdx.scenes.scene2d.ui.TextField$TextFieldStyle: {
+	default: {
+		font: defaul_font
+		fontColor: WHITE
+	}
+}
+com.badlogic.gdx.scenes.scene2d.ui.TextTooltip$TextTooltipStyle: {
+	default: {
+		label: default
+	}
+}
+}
