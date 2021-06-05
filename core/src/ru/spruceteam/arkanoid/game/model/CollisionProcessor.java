@@ -59,7 +59,7 @@ class CollisionProcessor {
         while(ballArrayIterator.hasNext()){
             Ball ball = ballArrayIterator.next();
             Side side;
-            Array.ArrayIterator<Brick> brickArrayIterator = level.getBricks().iterator();
+            /*Array.ArrayIterator<Brick> brickArrayIterator = level.getBricks().iterator();
             while (brickArrayIterator.hasNext()){
                 Brick b = brickArrayIterator.next();
                 if ((side = checkCollision(ball, b.x, b.y, b.x + b.getWidth(), b.y + b.getHeight())) != Side.NO){
@@ -69,23 +69,22 @@ class CollisionProcessor {
                     onBrickCollision(ball, b);
                     break;
                 }
-            }
-            Platform p = level.getPlatform();
+            }*/
+           /* Platform p = level.getPlatform();
             if ((side = checkCollision(ball, p.x,p.y, p.x + p.getWidth(), p.y + p.getHeight())) != Side.NO){
                 Gdx.app.debug(TAG, "Platform Collision");
                 side.changeBallU(ball);
                 onPlatformCollision(ball, p);
                 continue;
-            }
-            /*if ((side = checkCollision(ball, 0,0, level.getWorldWidth(), level.getWorldHeight())) != Side.NO){
-                Gdx.app.debug(TAG, "Border Collision");
-                side.changeBallU(ball);
-                if (side == Side.BOTTOM){
+            }*/
+            if ((side = checkBorderCollision(ball)) != Side.NO){
+                Gdx.app.debug(TAG, "Border Collision side = [" + side + "]");
+                if (side == Side.TOP){
                     ballArrayIterator.remove();
                     onBallDestroyed(ball);
-                } else
+                } else;
                     onBorderCollision(ball);
-            }*/
+            }
         }
     }
 
@@ -125,21 +124,26 @@ class CollisionProcessor {
 
     private Side checkBorderCollision(Ball ball){
         Vector2 u = ball.getU();
-        if (ball.x - ball.radius <= 0){
+        if (ball.x - ball.radius < 0){
+            ball.x = ball.radius;
             u.set(Math.abs(u.x), u.y);
             return Side.RIGHT;
         }
-        if (ball.x + ball.radius >= level.getWorldWidth()){
+        if (ball.x + ball.radius > level.getWorldWidth()){
+            ball.x = level.getWorldWidth() - ball.radius;
             u.set(-Math.abs(u.x), u.y);
             return Side.LEFT;
         }
-        if (ball.y - ball.radius <= 0){
+        if (ball.y - ball.radius < 0){
+            ball.y = ball.radius;
             u.set(u.x, Math.abs(u.y));
             return Side.TOP;
         }
-        if (ball.y + ball.radius >= level.getWorldHeight()){
+        if (ball.y + ball.radius > level.getWorldHeight()){
+            ball.y = level.getWorldHeight() - ball.radius;
             u.set(u.x, -Math.abs(u.y));
             return Side.BOTTOM;
         }
+        return Side.NO;
     }
 }
