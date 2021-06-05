@@ -64,7 +64,7 @@ public class Level {
         Gdx.app.debug(TAG, "Level: worldWidth = [" + worldWidth + "], worldHeight = [" + worldHeight + "]");
 
         //Читаем размер кирпичика
-        MapProperties bricksLayerProp = map.getTileSets().getTileSet("bricks").getProperties();
+        MapProperties bricksLayerProp = map.getTileSets().getTileSet("blocks").getProperties();
         bricksWidth = bricksLayerProp.get("tilewidth", Integer.class);
         bricksHeight = bricksLayerProp.get("tileheight", Integer.class);
         Gdx.app.debug(TAG, "Level: bricksWidth = [" + bricksWidth + "], brickHeight = [" + bricksHeight + "]");

@@ -6,6 +6,7 @@ import ru.spruceteam.arkanoid.game.LevelData;
 import ru.spruceteam.arkanoid.game.ui.LevelState;
 
 public class LevelScreen extends ScreenAdapter {
+
     private final LevelData levelData;
     private final LevelState state;
 

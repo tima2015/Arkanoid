@@ -24,9 +24,11 @@ public class GameObjectView {
     }
 
     public void draw(Batch batch) {
+        batch.begin();
         drawBricks(batch);
         drawBalls(batch);
         drawPlatform(batch);
+        batch.end();
     }
 
     private void drawBricks(Batch batch){

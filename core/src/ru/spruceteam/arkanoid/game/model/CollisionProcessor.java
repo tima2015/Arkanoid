@@ -1,12 +1,16 @@
 package ru.spruceteam.arkanoid.game.model;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Circle;
+import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.EventListener;
 import com.badlogic.gdx.utils.Array;
 import ru.spruceteam.arkanoid.Constants;
 import ru.spruceteam.arkanoid.game.etc.*;
 
 class CollisionProcessor {
+
+    private static final String TAG = "CollisionProcessor";
     
     private final Level level;
     
@@ -59,6 +63,7 @@ class CollisionProcessor {
             while (brickArrayIterator.hasNext()){
                 Brick b = brickArrayIterator.next();
                 if ((side = checkCollision(ball, b.x, b.y, b.x + b.getWidth(), b.y + b.getHeight())) != Side.NO){
+                    Gdx.app.debug(TAG, "Brick Collision");
                     side.changeBallU(ball);
                     brickArrayIterator.remove();
                     onBrickCollision(ball, b);
@@ -67,18 +72,20 @@ class CollisionProcessor {
             }
             Platform p = level.getPlatform();
             if ((side = checkCollision(ball, p.x,p.y, p.x + p.getWidth(), p.y + p.getHeight())) != Side.NO){
+                Gdx.app.debug(TAG, "Platform Collision");
                 side.changeBallU(ball);
                 onPlatformCollision(ball, p);
                 continue;
             }
-            if ((side = checkCollision(ball, 0,0, level.getWorldWidth(), level.getWorldHeight())) != Side.NO){
+            /*if ((side = checkCollision(ball, 0,0, level.getWorldWidth(), level.getWorldHeight())) != Side.NO){
+                Gdx.app.debug(TAG, "Border Collision");
                 side.changeBallU(ball);
                 if (side == Side.BOTTOM){
                     ballArrayIterator.remove();
                     onBallDestroyed(ball);
                 } else
                     onBorderCollision(ball);
-            }
+            }*/
         }
     }
 
@@ -114,5 +121,25 @@ class CollisionProcessor {
         float dx = x1 - x0;
         double d = Math.abs((y1-y0)*circle.x - (x1 - x0)*circle.y + x1*y0  - y1*x0) / Math.sqrt(dy*dy + dx*dx);
         return d <= circle.radius;
+    }
+
+    private Side checkBorderCollision(Ball ball){
+        Vector2 u = ball.getU();
+        if (ball.x - ball.radius <= 0){
+            u.set(Math.abs(u.x), u.y);
+            return Side.RIGHT;
+        }
+        if (ball.x + ball.radius >= level.getWorldWidth()){
+            u.set(-Math.abs(u.x), u.y);
+            return Side.LEFT;
+        }
+        if (ball.y - ball.radius <= 0){
+            u.set(u.x, Math.abs(u.y));
+            return Side.TOP;
+        }
+        if (ball.y + ball.radius >= level.getWorldHeight()){
+            u.set(u.x, -Math.abs(u.y));
+            return Side.BOTTOM;
+        }
     }
 }
