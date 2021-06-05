@@ -119,7 +119,7 @@ class CollisionProcessor {
         float dy = y1 - y0;
         float dx = x1 - x0;
         double d = Math.abs((y1-y0)*circle.x - (x1 - x0)*circle.y + x1*y0  - y1*x0) / Math.sqrt(dy*dy + dx*dx);
-        return d <= circle.radius;
+        return d < circle.radius;
     }
 
     private Side checkBorderCollision(Ball ball){
