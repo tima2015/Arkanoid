@@ -51,7 +51,7 @@ public class Core extends Game {
 		manager.load("audio/mainmenu.mp3", Music.class);
 		manager.load("map/1.tmx", TiledMap.class);
 		//manager.load("skin.json", Skin.class);
-		while (!manager.update())
+		while (!manager.update(10))
 			Gdx.app.debug(TAG, "create: loading progress is " + manager.getProgress());
 		//skin = manager.get("skin.json", Skin.class);
 		skin = new Skin(Gdx.files.internal("skin.json"));

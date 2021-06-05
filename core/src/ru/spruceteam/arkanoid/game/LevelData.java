@@ -20,7 +20,7 @@ public class LevelData {
     private final TiledMap map;
     private final float worldWidth, worldHeight;
     private final int blockWidth, blockHeight;
-    private final Array<Block> blocks = new Array();
+    private final Array<Block> blocks = new Array<>();
     private final PlayerPlatform playerPlatform;
     private final Array<Ball> balls = new Array<>();
     private State state = State.BEGIN;

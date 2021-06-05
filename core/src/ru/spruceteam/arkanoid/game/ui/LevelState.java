@@ -133,7 +133,7 @@ public class LevelState extends Stage {
 
     @Override
     public boolean keyDown(int keyCode) {
-        if (data.getState() == LevelData.State.BEGIN && keyCode == Constants.GAME_START_KEY){
+        if (data.getState() == LevelData.State.BEGIN && keyCode == Core.getCore().getSettings().startKey.getValue()){
             Ball ball = new Ball(data);
             data.getBalls().add(ball);
             addActor(ball);

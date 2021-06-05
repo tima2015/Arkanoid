@@ -20,7 +20,8 @@ public class SettingsMenuGroup extends Group {
             new SettingsLevel(Core.getCore().getSettings().sound),
             new SettingsKeyBind(Core.getCore().getSettings().leftKey),
             new SettingsKeyBind(Core.getCore().getSettings().rightKey),
-            new SettingsKeyBind(Core.getCore().getSettings().startKey)
+            new SettingsKeyBind(Core.getCore().getSettings().startKey),
+            new SettingsKeyBind(Core.getCore().getSettings().pauseKey)
     };
 
     public SettingsMenuGroup(){

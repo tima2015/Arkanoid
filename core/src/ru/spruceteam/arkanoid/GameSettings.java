@@ -49,6 +49,7 @@ public class GameSettings {
     public final SettingIntField leftKey = new SettingIntField("Left", Input.Keys.LEFT);
     public final SettingIntField rightKey = new SettingIntField("Right", Input.Keys.RIGHT);
     public final SettingIntField startKey = new SettingIntField("Start", Input.Keys.SPACE);
+    public final SettingIntField pauseKey = new SettingIntField("Start", Input.Keys.ESCAPE);
 
     GameSettings(){}
 
