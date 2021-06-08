@@ -3,28 +3,32 @@ package ru.spruceteam.arkanoid.screen.menu;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.scenes.scene2d.Group;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextArea;
+import com.badlogic.gdx.utils.Align;
 import ru.spruceteam.arkanoid.Core;
 import ru.spruceteam.arkanoid.screen.etc.HighScoreRow;
 
 import java.util.Arrays;
 
 public class HighScoreGroup extends ScrollPane {
-    private final TextArea names;
-    private final TextArea score;
+    private final Label names;
+    private final Label score;
     private final Group group;
 
     public HighScoreGroup(){
         super(new Group(), Core.getCore().getSkin());
         group = (Group) getActor();
         Skin skin = Core.getCore().getSkin();
-        names = new TextArea("",skin);
-        score = new TextArea("",skin);
+        names = new Label("",skin);
+        score = new Label("",skin);
         group.addActor(names);
         group.addActor(score);
 
+        names.setAlignment(Align.topLeft);
+        score.setAlignment(Align.topRight);
 
         names.setPosition(8,0);
         score.setY(0);
