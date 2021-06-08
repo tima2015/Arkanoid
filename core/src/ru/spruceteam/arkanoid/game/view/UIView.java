@@ -82,6 +82,7 @@ public class UIView extends Stage {
             @Override
             protected void brickCollision(BrickCollisionEvent event) {
                 super.brickCollision(event);
+                score.setText(level.getScore());
                 Core.getCore().getManager().get("audio/brick_hit.mp3", Sound.class)
                         .play(Core.getCore().getSettings().sound.getValue());
             }
@@ -89,6 +90,7 @@ public class UIView extends Stage {
             @Override
             protected void ballDestroyed(BallDestroyedEvent event) {
                 super.ballDestroyed(event);
+                lives.setText(level.getLives());
                 Core.getCore().getManager().get("audio/ball_destroy.mp3", Sound.class)
                         .play(Core.getCore().getSettings().sound.getValue());
             }
@@ -99,12 +101,5 @@ public class UIView extends Stage {
         bgImage.setPosition(bg.getX(), bg.getY());
         bgImage.setSize(bg.getProperties().get("width", Float.class),
                 bg.getProperties().get("height", Float.class));
-    }
-
-    @Override
-    public void act(float delta) {
-        super.act(delta);
-        score.setText(level.getScore());//todo put in listener
-        lives.setText(level.getLives());
     }
 }
