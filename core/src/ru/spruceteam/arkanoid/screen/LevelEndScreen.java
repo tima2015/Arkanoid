@@ -42,7 +42,7 @@ public class LevelEndScreen extends ScreenAdapter {
                 title.setText("You are win!\nAnd complete game!");
 
                 stage.addActor(hint);
-                hint.setPosition(0,title.getY() - hint.getHeight()*1.5f);
+                hint.setPosition(0,title.getY() - hint.getHeight()*4f);
                 hint.setWidth(stage.getWidth());
                 hint.setAlignment(Align.center);
 
