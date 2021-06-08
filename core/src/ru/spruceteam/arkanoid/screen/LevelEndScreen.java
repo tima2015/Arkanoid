@@ -3,6 +3,7 @@ package ru.spruceteam.arkanoid.screen;
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
@@ -86,8 +87,9 @@ public class LevelEndScreen extends ScreenAdapter {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                Gdx.files.local("hs.txt")
-                        .writeString('\n' + nameInput.getText() + "--" + level.getScore(), true);
+
+                FileHandle hs = Gdx.files.local("hs.txt");
+                hs.writeString((hs.exists() ? "\n" : "") + nameInput.getText() + "--" + level.getScore(), true);
                 Core.getCore().getScreen().dispose();
                 Core.getCore().setScreen(Core.getCore().getMenuScreen());
             }

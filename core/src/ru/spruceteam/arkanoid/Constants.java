@@ -37,7 +37,7 @@ public final class Constants {
                         "player.platform.height=64\n" +
                         "player.platform.speed=2000\n" +
                         "player.spb=1\n" +
-                        "level.count=1\n" +
+                        "level.count=5\n" +
                         "ball.radius=20\n" +
                         "ball.speed=750", false);
             }
