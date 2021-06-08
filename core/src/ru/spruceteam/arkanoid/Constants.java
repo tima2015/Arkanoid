@@ -1,11 +1,14 @@
 package ru.spruceteam.arkanoid;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 
 import javax.swing.*;
+import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.logging.FileHandler;
 
 public final class Constants {
 
@@ -27,7 +30,18 @@ public final class Constants {
     static {
         Properties properties = new Properties();
         try {
-            properties.load(new FileReader("conf.properties"));
+            FileHandle file = Gdx.files.local("conf.properties");
+            if (!file.exists()) {
+                Gdx.app.debug(TAG, "Properties file not exists! Creating default...");
+                file.writeString("player.platform.width=256\n" +
+                        "player.platform.height=64\n" +
+                        "player.platform.speed=2000\n" +
+                        "player.spb=1\n" +
+                        "level.count=1\n" +
+                        "ball.radius=20\n" +
+                        "ball.speed=750", false);
+            }
+            properties.load(new FileReader(file.file()));
             Gdx.app.debug(TAG, "Properties load successful!");
         } catch (IOException e) {
             String message = "Config file corrupted!\n" + e.getMessage();
