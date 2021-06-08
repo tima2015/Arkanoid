@@ -1,13 +1,14 @@
 package ru.spruceteam.arkanoid.game.etc;
 
+import com.dongbat.jbump.Item;
 import ru.spruceteam.arkanoid.game.model.Ball;
-import ru.spruceteam.arkanoid.game.model.Platform;
+import ru.spruceteam.arkanoid.game.model.Level;
 
 public class PlatformCollisionEvent implements Event {
     private final Ball ball;
-    private final Platform platform;
+    private final Item<Level> platform;
 
-    public PlatformCollisionEvent(Ball ball, Platform platform) {
+    public PlatformCollisionEvent(Ball ball, Item<Level> platform) {
         this.ball = ball;
         this.platform = platform;
     }
@@ -16,7 +17,7 @@ public class PlatformCollisionEvent implements Event {
         return ball;
     }
 
-    public Platform getPlatform() {
+    public Item<Level> getPlatform() {
         return platform;
     }
 }

@@ -7,6 +7,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Pixmap;
@@ -40,7 +41,7 @@ public class Core extends Game {
 	
 	@Override
 	public void create () {
-		Gdx.app.setLogLevel(Application.LOG_DEBUG);
+		Gdx.app.setLogLevel(Application.LOG_INFO);
 		settings.load();
 		font = new BitmapFont();
 		manager.setLoader(TiledMap.class, new TmxMapLoader());
@@ -48,8 +49,18 @@ public class Core extends Game {
 		manager.load("logo.png", Texture.class);
 		manager.load("audio/click.wav", Sound.class);
 		manager.load("audio/checked.wav", Sound.class);
+		manager.load("audio/ball_destroy.mp3", Sound.class);
+		manager.load("audio/border_hit.mp3", Sound.class);
+		manager.load("audio/brick_hit.mp3", Sound.class);
+		manager.load("audio/platform_hit.mp3", Sound.class);
+		manager.load("audio/lose.mp3", Sound.class);
+		manager.load("audio/win.mp3", Sound.class);
 		manager.load("audio/mainmenu.mp3", Music.class);
 		manager.load("map/1.tmx", TiledMap.class);
+		manager.load("map/2.tmx", TiledMap.class);
+		manager.load("map/3.tmx", TiledMap.class);
+		manager.load("map/4.tmx", TiledMap.class);
+		manager.load("map/5.tmx", TiledMap.class);
 		//manager.load("skin.json", Skin.class);
 		while (!manager.update(10))
 			Gdx.app.debug(TAG, "create: loading progress is " + manager.getProgress());

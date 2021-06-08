@@ -17,4 +17,12 @@ public class StateChangeEvent implements Event{
     public State getCurrent() {
         return current;
     }
+
+    @Override
+    public String toString() {
+        return "StateChangeEvent{" +
+                "old=" + old +
+                ", current=" + current +
+                '}';
+    }
 }

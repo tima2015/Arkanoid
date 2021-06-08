@@ -19,4 +19,12 @@ public class BrickCollisionEvent implements Event {
     public Brick getBrick() {
         return brick;
     }
+
+    @Override
+    public String toString() {
+        return "BrickCollisionEvent{" +
+                "ball=" + ball +
+                ", brick=" + brick +
+                '}';
+    }
 }

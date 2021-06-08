@@ -53,8 +53,8 @@ public class HighScoreGroup extends ScrollPane {
             StringBuilder scoreBuilder = new StringBuilder();
 
             for (HighScoreRow row : rows) {
-                namesBuilder.append(row.getName()).append("\n\n");
-                scoreBuilder.append(row.getScore()).append("\n\n");
+                namesBuilder.append(row.getName()).append("\n");
+                scoreBuilder.append(row.getScore()).append("\n");
             }
 
             names.setText(namesBuilder.toString());

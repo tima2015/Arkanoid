@@ -16,8 +16,7 @@ public class StartCommand implements Runnable {
     @Override
     public void run() {
         if (level.getState() == State.BEGIN){
-            level.getBalls().add(new Ball(level.getPlatform().x + level.getPlatform().getWidth()*.5f,
-                    level.getPlatform().y + level.getPlatform().getHeight() + Constants.BALL_RADIUS + 2));
+            level.addBall();
             level.setState(State.PROCESS);
         }
     }

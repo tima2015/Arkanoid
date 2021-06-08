@@ -12,4 +12,11 @@ public class BallDestroyedEvent implements Event{
     public Ball getBall() {
         return ball;
     }
+
+    @Override
+    public String toString() {
+        return "BallDestroyedEvent{" +
+                "ball=" + ball +
+                '}';
+    }
 }

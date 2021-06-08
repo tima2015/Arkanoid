@@ -12,4 +12,11 @@ public class BorderCollisionEvent implements Event {
     public Ball getBall() {
         return ball;
     }
+
+    @Override
+    public String toString() {
+        return "BorderCollisionEvent{" +
+                "ball=" + ball +
+                '}';
+    }
 }

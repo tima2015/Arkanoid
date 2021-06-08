@@ -8,10 +8,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.utils.Align;
 import ru.spruceteam.arkanoid.Core;
-import ru.spruceteam.arkanoid.game.LevelData;
 import ru.spruceteam.arkanoid.game.model.Level;
 import ru.spruceteam.arkanoid.screen.GameScreen;
-import ru.spruceteam.arkanoid.screen.LevelScreen;
 import ru.spruceteam.arkanoid.screen.etc.SoundedClickListener;
 
 public class SelectDifficultGroup extends Group {
@@ -68,5 +66,6 @@ public class SelectDifficultGroup extends Group {
     public void startGame(int difficult){
         Core.getCore().getManager().get("audio/mainmenu.mp3", Music.class).stop();
         Core.getCore().setScreen(new GameScreen(new Level(1,difficult, 0, 5)));
+        setVisible(false);
     }
 }

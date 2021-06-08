@@ -25,9 +25,9 @@ public class SettingsMenuGroup extends Group {
     };
 
     public SettingsMenuGroup(){
-        addActor(group[4]);
-        group[4].setPosition(8,0);
-        for (int i = 3; i >= 0 ; i--) {
+        addActor(group[5]);
+        group[5].setPosition(8,0);
+        for (int i = 4; i >= 0 ; i--) {
             addActor(group[i]);
             group[i].setPosition(8, group[i+1].getY() + group[i+1].getHeight()*1.5f);
         }

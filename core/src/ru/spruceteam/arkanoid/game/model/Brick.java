@@ -1,18 +1,15 @@
 package ru.spruceteam.arkanoid.game.model;
 
-import com.badlogic.gdx.maps.MapProperties;
 import com.badlogic.gdx.maps.objects.TextureMapObject;
-import com.badlogic.gdx.math.Rectangle;
+import com.dongbat.jbump.Item;
 
-public class Brick extends Rectangle {
+public class Brick extends Item<Level> {
 
     private final TextureMapObject mapObject;
 
-    public Brick(TextureMapObject mapObject) {
+    public Brick(TextureMapObject mapObject, Level level) {
+        super(level);
         this.mapObject = mapObject;
-        setPosition(mapObject.getX(), mapObject.getY());
-        MapProperties prop = mapObject.getProperties();
-        setSize(prop.get("width", Float.class), prop.get("height", Float.class));
     }
 
     public TextureMapObject getMapObject() {

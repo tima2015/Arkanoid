@@ -1,26 +1,19 @@
 misc.png
-size: 91, 10
+size: 130, 164
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 EnergyBall
   rotate: false
-  xy: 85, 1
-  size: 5, 4
-  orig: 5, 4
+  xy: 1, 1
+  size: 128, 128
+  orig: 128, 128
   offset: 0, 0
   index: -1
 VausSpacecraft
   rotate: false
-  xy: 51, 1
-  size: 32, 8
-  orig: 32, 8
-  offset: 0, 0
-  index: -1
-VausSpacecraftLarge
-  rotate: false
-  xy: 1, 1
-  size: 48, 8
-  orig: 48, 8
+  xy: 1, 131
+  size: 128, 32
+  orig: 128, 32
   offset: 0, 0
   index: -1

@@ -49,7 +49,7 @@ public class GameSettings {
     public final SettingIntField leftKey = new SettingIntField("Left", Input.Keys.LEFT);
     public final SettingIntField rightKey = new SettingIntField("Right", Input.Keys.RIGHT);
     public final SettingIntField startKey = new SettingIntField("Start", Input.Keys.SPACE);
-    public final SettingIntField pauseKey = new SettingIntField("Start", Input.Keys.ESCAPE);
+    public final SettingIntField pauseKey = new SettingIntField("Pause", Input.Keys.ESCAPE);
 
     GameSettings(){}
 
@@ -60,6 +60,7 @@ public class GameSettings {
         leftKey.load(pref);
         rightKey.load(pref);
         startKey.load(pref);
+        pauseKey.load(pref);
     }
 
     void save(){
@@ -69,6 +70,7 @@ public class GameSettings {
         leftKey.save(pref);
         rightKey.save(pref);
         startKey.save(pref);
+        pauseKey.save(pref);
         pref.flush();
     }
 }

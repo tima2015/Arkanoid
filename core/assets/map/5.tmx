@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.5" tiledversion="1.6.0" orientation="orthogonal" renderorder="right-down" width="11" height="26" tilewidth="128" tileheight="64" infinite="0" nextlayerid="4" nextobjectid="748">
+ <tileset firstgid="1" source="../tiles/bg/bg.tsx"/>
+ <tileset firstgid="4" source="../tiles/bricks.tsx"/>
+ <objectgroup id="3" name="misc" locked="1">
+  <object id="412" name="bg" gid="1" x="0" y="1664" width="1408" height="1664"/>
+ </objectgroup>
+ <objectgroup id="2" name="bricks">
+  <object id="694" gid="7" x="128" y="192" width="128" height="64"/>
+  <object id="695" gid="7" x="128" y="256" width="128" height="64"/>
+  <object id="696" gid="7" x="256" y="256" width="128" height="64"/>
+  <object id="697" gid="7" x="256" y="192" width="128" height="64"/>
+  <object id="698" gid="11" x="512" y="192" width="128" height="64"/>
+  <object id="699" gid="11" x="512" y="256" width="128" height="64"/>
+  <object id="700" gid="11" x="768" y="256" width="128" height="64"/>
+  <object id="701" gid="11" x="768" y="192" width="128" height="64"/>
+  <object id="702" gid="5" x="1024" y="192" width="128" height="64"/>
+  <object id="703" gid="5" x="1024" y="256" width="128" height="64"/>
+  <object id="704" gid="5" x="1152" y="256" width="128" height="64"/>
+  <object id="705" gid="5" x="1152" y="192" width="128" height="64"/>
+  <object id="706" gid="10" x="1152" y="384" width="128" height="64"/>
+  <object id="707" gid="10" x="1024" y="448" width="128" height="64"/>
+  <object id="708" gid="10" x="896" y="512" width="128" height="64"/>
+  <object id="709" gid="10" x="768" y="448" width="128" height="64"/>
+  <object id="710" gid="10" x="640" y="384" width="128" height="64"/>
+  <object id="711" gid="10" x="512" y="448" width="128" height="64"/>
+  <object id="712" gid="10" x="384" y="512" width="128" height="64"/>
+  <object id="713" gid="10" x="256" y="448" width="128" height="64"/>
+  <object id="714" gid="10" x="128" y="384" width="128" height="64"/>
+  <object id="715" gid="9" x="128" y="576" width="128" height="64"/>
+  <object id="716" gid="9" x="256" y="576" width="128" height="64"/>
+  <object id="717" gid="9" x="384" y="576" width="128" height="64"/>
+  <object id="718" gid="9" x="512" y="576" width="128" height="64"/>
+  <object id="719" gid="9" x="640" y="576" width="128" height="64"/>
+  <object id="720" gid="9" x="768" y="576" width="128" height="64"/>
+  <object id="721" gid="9" x="896" y="576" width="128" height="64"/>
+  <object id="722" gid="9" x="1024" y="576" width="128" height="64"/>
+  <object id="723" gid="9" x="1152" y="576" width="128" height="64"/>
+  <object id="724" gid="4" x="1024" y="704" width="128" height="64"/>
+  <object id="725" gid="4" x="1152" y="768" width="128" height="64"/>
+  <object id="726" gid="4" x="896" y="640" width="128" height="64"/>
+  <object id="727" gid="4" x="768" y="704" width="128" height="64"/>
+  <object id="728" gid="4" x="640" y="768" width="128" height="64"/>
+  <object id="729" gid="4" x="512" y="704" width="128" height="64"/>
+  <object id="730" gid="4" x="384" y="640" width="128" height="64"/>
+  <object id="731" gid="4" x="256" y="704" width="128" height="64"/>
+  <object id="732" gid="4" x="128" y="768" width="128" height="64"/>
+  <object id="733" gid="7" x="128" y="896" width="128" height="64"/>
+  <object id="734" gid="7" x="128" y="960" width="128" height="64"/>
+  <object id="735" gid="7" x="256" y="960" width="128" height="64"/>
+  <object id="736" gid="7" x="256" y="1024" width="128" height="64"/>
+  <object id="737" gid="7" x="384" y="896" width="128" height="64"/>
+  <object id="738" gid="7" x="384" y="960" width="128" height="64"/>
+  <object id="740" gid="6" x="896" y="960" width="128" height="64"/>
+  <object id="741" gid="6" x="1024" y="896" width="128" height="64"/>
+  <object id="742" gid="6" x="1024" y="960" width="128" height="64"/>
+  <object id="743" gid="6" x="1024" y="1024" width="128" height="64"/>
+  <object id="744" gid="6" x="1152" y="1024" width="128" height="64"/>
+  <object id="745" gid="6" x="1152" y="896" width="128" height="64"/>
+  <object id="747" gid="12" x="640" y="960" width="128" height="64"/>
+ </objectgroup>
+</map>

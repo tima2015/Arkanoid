@@ -77,12 +77,7 @@ public class MenuScreen extends ScreenAdapter {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 super.clicked(event, x, y);
-                backButton.setVisible(false);
-                aboutTextArea.setVisible(false);
-                settingsMenuGroup.setVisible(false);
-                highScoreGroup.setVisible(false);
-                selectDifficultGroup.setVisible(false);
-                menuGroup.setVisible(true);
+                hideSubMenus();
             }
         });
 
@@ -117,6 +112,15 @@ public class MenuScreen extends ScreenAdapter {
         selectDifficultGroup.setVisible(false);
     }
 
+    private void hideSubMenus(){
+        backButton.setVisible(false);
+        aboutTextArea.setVisible(false);
+        settingsMenuGroup.setVisible(false);
+        highScoreGroup.setVisible(false);
+        selectDifficultGroup.setVisible(false);
+        menuGroup.setVisible(true);
+    }
+
     @Override
     public void show() {
         Gdx.input.setInputProcessor(stage);
@@ -124,6 +128,7 @@ public class MenuScreen extends ScreenAdapter {
         menuGroup.setVisible(true);
         Music music = Core.getCore().getManager().get("audio/mainmenu.mp3", Music.class);
         music.setVolume(Core.getCore().getSettings().music.getFVal());
+        hideSubMenus();
         music.play();
     }
 
