@@ -1,25 +1,21 @@
 package ru.spruceteam.arkanoid.screen.etc;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.Align;
-import ru.spruceteam.arkanoid.Constants;
 import ru.spruceteam.arkanoid.Core;
 import ru.spruceteam.arkanoid.GameSettings;
 
 public class SettingsKeyBind extends SettingsGroup{
 
-    private int keyCode;
     private final Label keyCodeLabel;
 
     public SettingsKeyBind(GameSettings.SettingIntField field) {
         super(field);
-        keyCode = field.getValue();
+        int keyCode = field.getValue();
 
         addActor(keyCodeLabel = new Label(Input.Keys.toString(keyCode), Core.getCore().getSkin()));
         keyCodeLabel.setPosition(0,0);
@@ -48,14 +44,12 @@ public class SettingsKeyBind extends SettingsGroup{
                 getStage().setKeyboardFocus(event.getListenerActor());
                 lastText = keyCodeLabel.getText().toString();
                 keyCodeLabel.setText("Press key...");
-                Core.getCore().getManager().get("audio/click.wav", Sound.class)
-                        .play(Core.getCore().getSettings().sound.getFVal());
             } else {
                 getStage().setKeyboardFocus(null);
                 keyCodeLabel.setText(lastText);
-                Core.getCore().getManager().get("audio/click.wav", Sound.class)
-                        .play(Core.getCore().getSettings().sound.getFVal());
             }
+            Core.getCore().getManager().get("audio/click.wav", Sound.class)
+                    .play(Core.getCore().getSettings().sound.getFVal());
         }
 
         @Override

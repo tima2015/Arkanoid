@@ -2,7 +2,6 @@ package ru.spruceteam.arkanoid.screen;
 
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -101,12 +100,7 @@ public class LevelEndScreen extends ScreenAdapter {
                         level.getDifficult(), level.getScore(), level.getLives())));
             }
         });
-        nameInput.setTextFieldListener(new TextField.TextFieldListener() {
-            @Override
-            public void keyTyped(TextField textField, char c) {
-                toMainMenu.setVisible(!textField.getText().isEmpty());
-            }
-        });
+        nameInput.setTextFieldListener((textField, c) -> toMainMenu.setVisible(!textField.getText().isEmpty()));
     }
 
     @Override

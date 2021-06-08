@@ -3,8 +3,8 @@ package ru.spruceteam.arkanoid.screen.etc;
 import java.util.Comparator;
 
 public class HighScoreRow {
-    private String name;
-    private int score;
+    private final String name;
+    private final int score;
 
     public HighScoreRow(String name, int score){
         this.name = name;

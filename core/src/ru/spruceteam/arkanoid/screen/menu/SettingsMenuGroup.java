@@ -1,20 +1,13 @@
 package ru.spruceteam.arkanoid.screen.menu;
 
-import com.badlogic.gdx.Input;
-import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.scenes.scene2d.Group;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.InputListener;
-import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import ru.spruceteam.arkanoid.Core;
-import ru.spruceteam.arkanoid.GameSettings;
 import ru.spruceteam.arkanoid.screen.etc.SettingsGroup;
 import ru.spruceteam.arkanoid.screen.etc.SettingsKeyBind;
 import ru.spruceteam.arkanoid.screen.etc.SettingsLevel;
 
 public class SettingsMenuGroup extends Group {
-    private int current = 0;
+    private final int current = 0;
     private final SettingsGroup[] group = new SettingsGroup[]{
             new SettingsLevel(Core.getCore().getSettings().music),
             new SettingsLevel(Core.getCore().getSettings().sound),

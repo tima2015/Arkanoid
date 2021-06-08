@@ -1,6 +1,5 @@
 package ru.spruceteam.arkanoid.game.view;
 
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.maps.objects.TextureMapObject;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -8,7 +7,6 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.viewport.FitViewport;
-import com.badlogic.gdx.utils.viewport.Viewport;
 import ru.spruceteam.arkanoid.Core;
 import ru.spruceteam.arkanoid.game.etc.*;
 import ru.spruceteam.arkanoid.game.model.Level;
@@ -17,14 +15,12 @@ import ru.spruceteam.arkanoid.screen.LevelEndScreen;
 
 public class UIView extends Stage {
 
-    private final Level level;
     private final Label score;
     private final Label lives;
     private final Label pause;
 
     public UIView(Level level) {
         super(new FitViewport(level.getWorldWidth()*2, level.getWorldHeight()));
-        this.level = level;
         Skin skin = Core.getCore().getSkin();
         Label scoreTitle = new Label("Score: ", skin);
         addActor(scoreTitle);

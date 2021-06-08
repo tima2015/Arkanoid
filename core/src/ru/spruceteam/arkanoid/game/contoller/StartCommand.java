@@ -1,7 +1,5 @@
 package ru.spruceteam.arkanoid.game.contoller;
 
-import ru.spruceteam.arkanoid.Constants;
-import ru.spruceteam.arkanoid.game.model.Ball;
 import ru.spruceteam.arkanoid.game.model.Level;
 import ru.spruceteam.arkanoid.game.model.State;
 

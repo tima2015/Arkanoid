@@ -5,7 +5,6 @@ import com.badlogic.gdx.Gdx;
 import javax.swing.*;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.Properties;
 
 public final class Constants {

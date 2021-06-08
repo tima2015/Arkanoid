@@ -6,7 +6,6 @@ import com.badlogic.gdx.scenes.scene2d.Group;
 import com.badlogic.gdx.scenes.scene2d.ui.ScrollPane;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextArea;
-import com.badlogic.gdx.utils.Align;
 import ru.spruceteam.arkanoid.Core;
 import ru.spruceteam.arkanoid.screen.etc.HighScoreRow;
 
