@@ -31,7 +31,7 @@ public class Core extends Game {
 	
 	@Override
 	public void create () {
-		Gdx.app.setLogLevel(Application.LOG_DEBUG);
+		Gdx.app.setLogLevel(Application.LOG_INFO);
 		settings.load();
 		font = new BitmapFont();
 		manager.setLoader(TiledMap.class, new TmxMapLoader());
