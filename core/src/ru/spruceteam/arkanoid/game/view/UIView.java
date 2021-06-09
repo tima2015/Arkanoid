@@ -52,11 +52,11 @@ public class UIView extends Stage {
                 pause.setVisible(event.getCurrent() == State.PAUSE);
                 if (event.getCurrent() == State.LOSE){
                     Core.getCore().getManager().get("audio/lose.mp3", Sound.class)
-                            .play(Core.getCore().getSettings().sound.getValue());
+                            .play(Core.getCore().getSettings().sound.getValue()/100f);
                     Core.getCore().setScreen(new LevelEndScreen(false, level));
                 }else if (event.getCurrent() == State.WIN){
                     Core.getCore().getManager().get("audio/win.mp3", Sound.class)
-                            .play(Core.getCore().getSettings().sound.getValue());
+                            .play(Core.getCore().getSettings().sound.getValue()/100f);
                     Core.getCore().setScreen(new LevelEndScreen(true, level));
                 }
             }
@@ -65,7 +65,7 @@ public class UIView extends Stage {
             protected void borderCollision(BorderCollisionEvent event) {
                 super.borderCollision(event);
                 Core.getCore().getManager().get("audio/border_hit.mp3", Sound.class)
-                        .play(Core.getCore().getSettings().sound.getValue());
+                        .play(Core.getCore().getSettings().sound.getValue()/100f);
             }
 
             @Override
@@ -80,7 +80,7 @@ public class UIView extends Stage {
                 super.brickCollision(event);
                 score.setText(level.getScore());
                 Core.getCore().getManager().get("audio/brick_hit.mp3", Sound.class)
-                        .play(Core.getCore().getSettings().sound.getValue());
+                        .play(Core.getCore().getSettings().sound.getValue()/100f);
             }
 
             @Override
@@ -88,7 +88,7 @@ public class UIView extends Stage {
                 super.ballDestroyed(event);
                 lives.setText(level.getLives());
                 Core.getCore().getManager().get("audio/ball_destroy.mp3", Sound.class)
-                        .play(Core.getCore().getSettings().sound.getValue());
+                        .play(Core.getCore().getSettings().sound.getValue()/100f);
             }
         });
         TextureMapObject bg = (TextureMapObject) level.getMap().getLayers().get("misc").getObjects().get("bg");
