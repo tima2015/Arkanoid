@@ -6,6 +6,7 @@ import com.dongbat.jbump.Rect;
 import ru.spruceteam.arkanoid.Constants;
 import ru.spruceteam.arkanoid.game.etc.ActivatedCommand;
 import ru.spruceteam.arkanoid.game.model.Level;
+import ru.spruceteam.arkanoid.game.model.State;
 
 public class MoveLeftActivatedCommand extends ActivatedCommand {
 
@@ -17,6 +18,8 @@ public class MoveLeftActivatedCommand extends ActivatedCommand {
 
     @Override
     public void execute(float delta) {
+        if(level.getState() != State.PAUSE)
+            return;
         Item<Level> platform = level.getPlatform();
         Rect rect = level.getWorld().getRect(platform);
         if (rect.x > 0)
