@@ -18,7 +18,7 @@ public class MoveLeftActivatedCommand extends ActivatedCommand {
 
     @Override
     public void execute(float delta) {
-        if(level.getState() != State.PAUSE)
+        if(level.getState() == State.PAUSE)
             return;
         Item<Level> platform = level.getPlatform();
         Rect rect = level.getWorld().getRect(platform);
