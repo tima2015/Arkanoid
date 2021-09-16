@@ -59,7 +59,6 @@ public class SettingsKeyBind extends SettingsGroup{
                 keyCodeLabel.setText(Input.Keys.toString(keycode));
                 getStage().setKeyboardFocus(null);
                 active = false;
-                keyCodeLabel.setText(lastText);
                 Core.getCore().getManager().get("audio/click.wav", Sound.class)
                         .play(Core.getCore().getSettings().sound.getFVal());
                 return true;

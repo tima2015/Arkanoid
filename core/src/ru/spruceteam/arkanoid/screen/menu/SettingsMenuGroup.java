@@ -7,7 +7,6 @@ import ru.spruceteam.arkanoid.screen.etc.SettingsKeyBind;
 import ru.spruceteam.arkanoid.screen.etc.SettingsLevel;
 
 public class SettingsMenuGroup extends Group {
-    private final int current = 0;
     private final SettingsGroup[] group = new SettingsGroup[]{
             new SettingsLevel(Core.getCore().getSettings().music),
             new SettingsLevel(Core.getCore().getSettings().sound),

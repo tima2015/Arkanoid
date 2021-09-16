@@ -51,8 +51,6 @@ public class SettingsLevel extends SettingsGroup {
         arrowLeftImage.setY((getHeight()- levelLabel.getPrefHeight())*.5f);
     }
 
-    //Плавное начинание изменения параметра
-    private final float t = 0;
     @Override
     public void act(float delta) {
         super.act(delta);

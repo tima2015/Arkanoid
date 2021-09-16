@@ -21,7 +21,6 @@ public final class Constants {
     public static final int PLAYER_PLATFORM_WIDTH;
     public static final int PLAYER_PLATFORM_HEIGHT;
     public static final float PLAYER_PLATFORM_SPEED;
-    public static final float LEVEL_INFO_PANEL_WIDTH = 100;
     public static final int SCORE_PER_BLOCK;
     public static final int LEVELS_COUNT;
     public static final float BALL_RADIUS;
